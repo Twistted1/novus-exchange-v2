@@ -105,7 +105,6 @@ export default function Home() {
 
         <main ref={containerRef} className="max-w-6xl mx-auto px-6">
           <Hero />
-          <Spacer />
           <About />
           <Spacer />
           <LatestArticles searchQuery={searchQuery} />
