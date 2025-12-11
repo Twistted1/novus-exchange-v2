@@ -38,10 +38,7 @@ export default function Header({ searchQuery, setSearchQuery }) {
 }
 
 function Brand() {
-  const sources = ['/logo.svg', '/logo.png', '/logo@2x.png']
-  const [idx, setIdx] = useState(0)
   const [fallback, setFallback] = useState(false)
-  const src = sources[idx]
   return (
     <a href="#home" className="flex items-center gap-3 shine-hover">
       {!fallback ? (
