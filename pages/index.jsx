@@ -13,6 +13,8 @@ import AskNovus from '../components/AskNovus'
 import ExitIntentModal from '../components/ExitIntentModal'
 import SiteChatbot from '../components/SiteChatbot'
 
+const Spacer = () => <div className="h-32 md:h-48 w-full" />
+
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('')
   const containerRef = useRef(null)
@@ -72,7 +74,7 @@ export default function Home() {
     return () => obs.disconnect()
   }, [])
 
-  
+
 
   return (
     <>
@@ -88,29 +90,32 @@ export default function Home() {
         <meta name="twitter:site" content="@NovusExchange" />
         <link rel="canonical" href="https://novusexchange.com" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
-          '@context': 'https://schema.org', '@type': 'WebSite', name: 'Novus Exchange',
-          url: 'https://novusexchange.com', potentialAction: {
-            '@type': 'SearchAction', target: 'https://novusexchange.com/?q={search_term_string}',
-            'query-input': 'required name=search_term_string'
-          }
-        }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org', '@type': 'WebSite', name: 'Novus Exchange',
+            url: 'https://novusexchange.com', potentialAction: {
+              '@type': 'SearchAction', target: 'https://novusexchange.com/?q={search_term_string}',
+              'query-input': 'required name=search_term_string'
+            }
+          })
+        }} />
       </Head>
       <div className="min-h-screen theme-bg text-white">
         <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
         <main ref={containerRef} className="max-w-6xl mx-auto px-6">
           <Hero />
-
+          <Spacer />
           <About />
-
+          <Spacer />
           <LatestArticles searchQuery={searchQuery} />
-
+          <Spacer />
           <Trending />
-
+          <Spacer />
           <Solutions />
+          <Spacer />
           <AskNovus />
-
+          <Spacer />
           <Contact />
         </main>
         <Footer />

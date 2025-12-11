@@ -156,7 +156,7 @@ export default function LatestArticles({ searchQuery }) {
   })
 
   return (
-    <section id="articles" className="min-h-screen py-32 relative reveal scroll-mt-24">
+    <section id="articles" className="relative reveal scroll-mt-24">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-5xl font-black mb-6 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Latest Articles</h2>
         <p className="text-xl text-white/70 mb-16 text-center max-w-2xl mx-auto font-light">In-depth analysis and commentary on critical issues. We go beyond the headlines to provide the full context you need to understand the forces shaping our world.</p>

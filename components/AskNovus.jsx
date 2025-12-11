@@ -55,7 +55,7 @@ export default function AskNovus() {
   }
 
   return (
-    <section id="ask-novus" className="min-h-screen py-32 bg-black reveal">
+    <section id="ask-novus" className="bg-black reveal">
       <div className="container mx-auto px-6 max-w-4xl">
         <h2 className="text-4xl font-bold mb-4 text-center text-white">Ask Novus</h2>
         <p className="text-gray-400 mb-8 text-center max-w-xl mx-auto">AI-powered research assistant.</p>
@@ -65,8 +65,8 @@ export default function AskNovus() {
             {messages.map((msg, index) => (
               <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] p-4 rounded-lg text-sm leading-relaxed ${msg.sender === 'user'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-[#222] text-gray-200 border border-white/5'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-[#222] text-gray-200 border border-white/5'
                   }`}>
                   {msg.type === 'error' ? <span className="text-red-400">{msg.text}</span> : <p>{msg.text}</p>}
                   {msg.type === 'image' && (
