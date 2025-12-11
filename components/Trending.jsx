@@ -41,10 +41,10 @@ export default function Trending() {
   }, [])
   const [selectedTrend, setSelectedTrend] = useState(null)
   return (
-    <section id="trending" className="relative bg-black/40 reveal scroll-mt-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-5xl font-black mb-6 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Global Trending</h2>
-        <p className="text-xl text-white/70 mb-16 text-center max-w-2xl mx-auto font-light">AI-curated daily bites of the top three stories shaping the global narrative right now. Click to expand.</p>
+    <section id="trending" className="min-h-screen relative bg-black/40 reveal scroll-mt-0 flex items-center justify-center snap-start py-20">
+      <div className="max-w-6xl mx-auto px-6 w-full">
+        <h2 className="text-5xl md:text-6xl font-black mb-6 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Global Trending</h2>
+        <p className="text-xl text-white/70 mb-16 text-center max-w-2xl mx-auto font-light">Daily bites of the top stories shaping the global narrative.</p>
         {loading ? (
           <div className="text-center text-cyan-400 animate-pulse text-xl font-mono">CALCULATING TRENDS...</div>
         ) : (

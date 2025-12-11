@@ -13,7 +13,7 @@ import AskNovus from '../components/AskNovus'
 import ExitIntentModal from '../components/ExitIntentModal'
 import SiteChatbot from '../components/SiteChatbot'
 
-const Spacer = () => <div className="h-32 md:h-48 w-full" />
+
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -106,15 +106,10 @@ export default function Home() {
         <main ref={containerRef} className="max-w-6xl mx-auto px-6">
           <Hero />
           <About />
-          <Spacer />
           <LatestArticles searchQuery={searchQuery} />
-          <Spacer />
           <Trending />
-          <Spacer />
           <Solutions />
-          <Spacer />
           <AskNovus />
-          <Spacer />
           <Contact />
         </main>
         <Footer />

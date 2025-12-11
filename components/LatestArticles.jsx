@@ -156,16 +156,16 @@ export default function LatestArticles({ searchQuery }) {
   })
 
   return (
-    <section id="articles" className="relative reveal scroll-mt-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-5xl font-black mb-6 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Latest Articles</h2>
-        <p className="text-xl text-white/70 mb-16 text-center max-w-2xl mx-auto font-light">In-depth analysis and commentary on critical issues. We go beyond the headlines to provide the full context you need to understand the forces shaping our world.</p>
+    <section id="articles" className="min-h-screen relative reveal scroll-mt-0 flex items-center justify-center snap-start py-20">
+      <div className="max-w-7xl mx-auto px-6 w-full">
+        <h2 className="text-5xl md:text-6xl font-black mb-6 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Latest Articles</h2>
+        <p className="text-xl text-white/70 mb-16 text-center max-w-2xl mx-auto font-light">In-depth analysis and commentary on critical issues.</p>
         {isLoading && <div className="text-center text-cyan-400 animate-pulse text-xl font-mono">LOADING INTELLIGENCE...</div>}
         {!isLoading && (
           filtered.length === 0 ? (
             <div className="text-center text-gray-500 py-10 text-xl">No results found.</div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {filtered.map(article => (
                 <ArticleCard key={article.id} article={article} onClick={(e) => { setSelectedArticleId(article.id); lastClickedArticleRef.current = e.currentTarget }} />
               ))}
