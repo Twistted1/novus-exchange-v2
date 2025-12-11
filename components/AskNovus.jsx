@@ -153,7 +153,7 @@ export default function AskNovus() {
               />
               <button
                 type="submit"
-                className="bg-cyan-600 text-white px-8 py-3 rounded-full hover:bg-cyan-500 disabled:opacity-50 font-bold transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] transform hover:scale-105 active:scale-95"
+                className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-500 disabled:opacity-50 font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] transform hover:scale-105 active:scale-95"
                 disabled={isLoading || !input.trim()}
               >
                 Send

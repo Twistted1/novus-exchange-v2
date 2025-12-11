@@ -76,7 +76,7 @@ export default function SiteChatbot() {
           <form onSubmit={handleSend} className="p-3 bg-white/5 border-t border-white/10 backdrop-blur-md">
             <div className="flex gap-2">
               <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type a message..." className="flex-1 bg-black/40 text-white text-sm rounded-full px-4 py-2 focus:outline-none focus:ring-1 focus:ring-cyan-500 border border-white/10 placeholder-white/30" />
-              <button type="submit" className="bg-cyan-600 text-white p-2 rounded-full hover:bg-cyan-500 shadow-lg shadow-cyan-900/20 transition-all">
+              <button type="submit" className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-500 shadow-lg shadow-blue-900/20 transition-all">
                 <svg className="w-4 h-4 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
               </button>
             </div>
