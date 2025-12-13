@@ -148,7 +148,7 @@ export default function AskNovus() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder={isLoading ? 'Thinking...' : "Ask anything or describe an image to create..."}
-                className="flex-grow bg-black/40 text-white px-5 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-500/50 border border-white/10 placeholder-white/30 transition-all"
+                className="flex-grow bg-black/40 text-white px-5 py-3 rounded focus:outline-none focus:ring-2 focus:ring-cyan-500/50 border border-white/10 placeholder-white/30 transition-all"
                 disabled={isLoading}
               />
               <button
@@ -162,7 +162,7 @@ export default function AskNovus() {
                 </svg>
               </button>
             </div>
-            <p className="text-center text-gray-500 text-xs mt-3">AI can make mistakes. Please verify important information.</p>
+            <p className="text-center text-gray-500 text-[10px] mt-3">AI can make mistakes. Please verify important information.</p>
             <p className="text-center text-gray-500 text-[10px] mt-2">Your privacy is important. We do not keep records of your conversations. Admin fee required.</p>
           </form>
         </div>
