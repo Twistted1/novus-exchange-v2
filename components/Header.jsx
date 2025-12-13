@@ -46,7 +46,7 @@ function Brand() {
   return (
     <a href="#home" className="flex items-center gap-2">
       {!fallback ? (
-        <img src="/logo.svg" alt="Novus Exchange" className="h-10 w-auto" onError={() => setFallback(true)} />
+        <img src="/novus-logo.png" alt="Novus Exchange" className="h-12 w-auto" onError={() => setFallback(true)} />
       ) : (
         <div className="flex items-center gap-2">
           <div className="text-xl font-semibold text-white">Novus Exchange</div>
