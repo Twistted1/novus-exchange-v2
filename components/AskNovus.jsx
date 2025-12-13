@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 export default function AskNovus() {
-  const [messages, setMessages] = useState([{ id: '1', sender: 'ai', text: 'Hello' }])
+  const [messages, setMessages] = useState([{ id: '1', sender: 'ai', text: "Hello! I'm Novus. How can I assist your research today? You can ask me to analyze topics, create images, or answer questions." }])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -147,18 +147,19 @@ export default function AskNovus() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder={isLoading ? 'Thinking...' : "Ask a question..."}
+                placeholder={isLoading ? 'Thinking...' : "Ask anything or describe an image to create..."}
                 className="flex-grow bg-black/40 text-white px-5 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-500/50 border border-white/10 placeholder-white/30 transition-all"
                 disabled={isLoading}
               />
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-500 disabled:opacity-50 font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] transform hover:scale-105 active:scale-95"
+                className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 disabled:opacity-50 font-bold transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] transform hover:scale-105 active:scale-95"
                 disabled={isLoading || !input.trim()}
               >
                 Send
               </button>
             </div>
+            <p className="text-center text-gray-500 text-[10px] mt-2">Your privacy is important. We do not keep records of your conversations. Admin fee required.</p>
           </form>
         </div>
       </div>
