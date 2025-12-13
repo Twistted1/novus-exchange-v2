@@ -17,9 +17,14 @@ export default function SiteChatbot() {
     setInput('')
     setMessages(prev => [...prev, { id: Date.now(), sender: 'user', text: userText }])
     try {
-      const response = await fetch('/api/ask-novus', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt: userText, isSiteChat: true }) })
+      const systemContext = "You are Novus Assistant, a helpful AI for the Novus Exchange website. Novus Exchange is a media company providing critical, clear-eyed commentary on global issues. The website features: Articles (in-depth analysis updated weekly), Global Trending (AI-powered summaries updated daily), About section, Ask Novus (AI research assistant), Solutions/Novus Ecosystem (media tools), and Contact. Always provide concise, helpful answers about the website and stay professional."
+      const response = await fetch('/api/ask-novus', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: `${systemContext}\n\nUser: ${userText}`, isSiteChat: true })
+      })
       const data = await response.json()
-      setMessages(prev => [...prev, { id: Date.now() + 1, sender: 'ai', text: data.text || 'ok' }])
+      setMessages(prev => [...prev, { id: Date.now() + 1, sender: 'ai', text: data.text || 'I apologize, but I am having trouble connecting right now.' }])
     } catch {
       setMessages(prev => [...prev, { id: Date.now() + 1, sender: 'ai', text: "I'm having trouble connecting right now." }])
     }
@@ -77,17 +82,25 @@ export default function SiteChatbot() {
         )}
       </button>
       {isOpen && (
-        <div className="fixed bottom-40 right-6 w-96 max-w-[calc(100vw-3rem)] liquid-glass z-50 flex flex-col overflow-hidden shadow-2xl max-h-[600px]">
-          <div className="bg-cyan-500/20 backdrop-blur-md p-4 flex items-center justify-between border-b border-white/10"><h3 className="font-bold text-white drop-shadow-md">Novus Assistant</h3></div>
-          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-transparent">
+        <div className="fixed bottom-40 right-6 w-96 max-w-[calc(100vw-3rem)] bg-[#050505] border border-white/20 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden" style={{ height: '600px' }}>
+          <div className="bg-red-600 p-4 flex items-center justify-between">
+            <h3 className="font-bold text-white text-base">Novus Assistant</h3>
+            <button onClick={() => { setIsOpen(false); stopSpeak(); }} className="text-white/80 hover:text-white transition-colors" aria-label="Close">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+          </div>
+          <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-transparent scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
             {messages.map((msg) => (
               <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 rounded-lg text-sm ${msg.sender === 'user' ? 'bg-cyan-600 text-white shadow-lg' : 'bg-white/10 text-white border border-white/5 backdrop-blur-sm'}`}>
+                <div className={`max-w-[85%] p-4 rounded-xl text-sm ${msg.sender === 'user' ? 'bg-white/10 text-white border border-white/20' : 'bg-white/5 text-gray-100 border border-white/10'}`}>
                   {msg.text}
                   {msg.sender !== 'user' && (
                     <div className="mt-2 flex gap-2">
-                      <button className="px-2 py-1 text-xs rounded bg-white/10" onClick={() => speakText(msg.text)}>Listen</button>
-                      <button className="px-2 py-1 text-xs rounded bg-white/10" onClick={stopSpeak}>Stop</button>
+                      <button className="text-xs text-cyan-400 hover:text-cyan-300 flex items-center gap-1" onClick={() => speakText(msg.text)} aria-label="Read aloud">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+                        Listen
+                      </button>
+                      <button className="text-xs text-gray-400 hover:text-gray-300" onClick={stopSpeak} aria-label="Stop">Stop</button>
                     </div>
                   )}
                 </div>
@@ -95,11 +108,13 @@ export default function SiteChatbot() {
             ))}
             <div ref={messagesEndRef} />
           </div>
-          <form onSubmit={handleSend} className="p-3 bg-white/5 border-t border-white/10 backdrop-blur-md">
-            <div className="flex gap-2">
-              <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type a message..." className="flex-1 bg-black/40 text-white text-sm rounded-full px-4 py-2 focus:outline-none focus:ring-1 focus:ring-cyan-500 border border-white/10 placeholder-white/30" />
-              <button type="submit" className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-500 shadow-lg shadow-blue-900/20 transition-all">
-                <svg className="w-4 h-4 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+          <form onSubmit={handleSend} className="p-4 bg-white/5 border-t border-white/10 backdrop-blur-md">
+            <div className="flex gap-3 items-center">
+              <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type a message..." className="flex-1 bg-black/40 text-white text-sm rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500/50 border border-white/10 placeholder-white/30" />
+              <button type="submit" className="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition-all flex items-center justify-center" aria-label="Send">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </button>
             </div>
           </form>
