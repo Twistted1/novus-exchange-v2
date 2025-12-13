@@ -49,7 +49,7 @@ function Brand() {
         <div className="flex items-center gap-3">
           <Image src="/logo.svg" alt="Novus Exchange" width={50} height={50} className="h-12 w-12" unoptimized onError={() => setFallback(true)} />
           <div className="flex flex-col">
-            <div className="text-lg font-bold tracking-tight text-white">Novus Exchange</div>
+            <div className="text-lg font-bold tracking-tight text-cyan-400">Novus Exchange</div>
             <div className="text-[10px] text-gray-400 tracking-wider">Connecting perspectives</div>
           </div>
         </div>
@@ -59,7 +59,7 @@ function Brand() {
             <span className="text-white font-black text-lg">NE</span>
           </div>
           <div className="flex flex-col">
-            <div className="text-lg font-bold tracking-tight text-white drop-shadow-lg neon-text">Novus<span className="text-cyan-400">.</span>Exchange</div>
+            <div className="text-lg font-bold tracking-tight text-cyan-400 drop-shadow-lg neon-text">Novus<span className="text-cyan-400">.</span>Exchange</div>
             <div className="text-[10px] text-gray-400 tracking-wider">Connecting perspectives</div>
           </div>
         </div>
