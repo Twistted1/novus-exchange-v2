@@ -5,7 +5,7 @@ function ArticleCard({ article, onClick }) {
   const fallbackImage = 'https://placehold.co/1920x1080/1a1a1a/ffffff?text=Novus+Exchange'
   const [imgSrc, setImgSrc] = useState(article.image || fallbackImage)
   return (
-    <div className="bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/10 cursor-pointer group flex flex-col aspect-square neon-card shine-hover" onClick={onClick} role="button" tabIndex="0" aria-label={`Read article: ${article.title}`} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onClick(e)}>
+    <div className="bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/10 cursor-pointer group flex flex-col aspect-video neon-card shine-hover" onClick={onClick} role="button" tabIndex="0" aria-label={`Read article: ${article.title}`} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onClick(e)}>
       <div className="relative overflow-hidden h-1/2 w-full">
         <Image fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-110" src={imgSrc} alt={article.title} unoptimized onError={() => setImgSrc(fallbackImage)} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
@@ -156,7 +156,7 @@ export default function LatestArticles({ searchQuery }) {
   })
 
   return (
-    <section id="articles" className="min-h-screen relative reveal scroll-mt-0 flex items-center justify-center snap-start py-20">
+    <section id="articles" className="min-h-screen relative reveal scroll-mt-0 flex items-center justify-center snap-start py-32 z-10">
       <div className="max-w-7xl mx-auto px-6 w-full">
         <h2 className="text-5xl md:text-6xl font-black mb-6 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Latest Articles</h2>
         <p className="text-xl text-white/70 mb-16 text-center max-w-2xl mx-auto font-light">In-depth analysis and commentary on critical issues.</p>

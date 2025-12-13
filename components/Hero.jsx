@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center text-center px-6">
+    <section id="home" className="min-h-screen flex items-center justify-center text-center px-6 relative z-10">
       <div className="flex flex-col items-center justify-center max-w-5xl mx-auto w-full">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-none mb-8 text-white drop-shadow-2xl">
-          Cut Through The Noise
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-tight mb-8 text-white drop-shadow-2xl">
+          CUT THROUGH THE NOISE
           <br />
-          <span className="text-white">Stay Informed</span>
+          <span className="text-white">STAY INFORMED</span>
         </h1>
-        <p className="text-2xl md:text-3xl text-gray-300 font-light mb-12 max-w-3xl leading-relaxed drop-shadow-md">
+        <p className="text-lg md:text-xl text-gray-300 font-light mb-12 max-w-3xl leading-relaxed">
           Critical, clear-eyed commentary on the issues shaping our world.
         </p>
         <div className="flex flex-col sm:flex-row gap-6">

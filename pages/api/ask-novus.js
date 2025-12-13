@@ -14,10 +14,18 @@ export default async function handler(req, res) {
   }
   if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON && !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
     try {
-      const tmpPath = path.join(os.tmpdir(), 'gcp-sa.json')
+      const tmpPath = path.join(os.tmpdir(), `gcp-sa-${Date.now()}.json`)
       fs.writeFileSync(tmpPath, process.env.GOOGLE_SERVICE_ACCOUNT_JSON, { encoding: 'utf8' })
       process.env.GOOGLE_APPLICATION_CREDENTIALS = tmpPath
-    } catch {}
+
+      // Clean up temp file on process exit
+      if (!global.__gcpCleanupRegistered) {
+        global.__gcpCleanupRegistered = true
+        process.on('exit', () => {
+          try { fs.unlinkSync(tmpPath) } catch { }
+        })
+      }
+    } catch { }
   }
   const hasOpenAI = !!process.env.OPENAI_API_KEY
   const hasGemini = !!process.env.GEMINI_API_KEY
@@ -35,7 +43,7 @@ export default async function handler(req, res) {
         const { VertexAI } = await import('@google-cloud/vertexai')
         const vertex = new VertexAI({ project: process.env.VERTEX_PROJECT_ID, location: process.env.VERTEX_LOCATION })
         const model = vertex.getGenerativeModel({ model: 'gemini-1.5-flash' })
-        const result = await model.generateContent([ prompt || 'Analyze this image.', { inlineData: { data: imageData, mimeType } } ])
+        const result = await model.generateContent([prompt || 'Analyze this image.', { inlineData: { data: imageData, mimeType } }])
         const reply = result.response?.text() || ''
         res.status(200).json({ text: reply })
         return

@@ -6,7 +6,7 @@ export default function Solutions() {
     { title: 'CMS Enterprise', description: 'The ultimate publishing engine. Advanced roles, multi-site management, and dedicated support for large-scale organizations.', icon: (<svg className="w-8 h-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>), cta: 'Contact Sales', status: 'IN DEVELOPMENT', statusColor: 'text-gray-400 bg-gray-400/10', link: '#contact' }
   ]
   return (
-    <section id="solutions" className="relative reveal scroll-mt-24">
+    <section id="solutions" className="relative reveal scroll-mt-24 py-32 z-10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-black text-white mb-4 drop-shadow-lg">The Novus Ecosystem</h2>
@@ -14,12 +14,12 @@ export default function Solutions() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col transition-all duration-300 group relative overflow-hidden neon-card shine-hover">
+            <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col transition-all duration-300 group relative overflow-hidden neon-card shine-hover hover:-translate-y-2 hover:border-cyan-500/50">
               <div className={`absolute top-4 right-4 text-[10px] font-bold px-2 py-1 rounded uppercase ${product.statusColor}`}>{product.status}</div>
               <div className="bg-black/40 w-14 h-14 rounded-xl flex items-center justify-center mb-6 border border-white/5 group-hover:scale-110 transition-transform">{product.icon}</div>
               <h3 className="text-xl font-bold text-white mb-3 neon-text">{product.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">{product.description}</p>
-              <a href={product.link} className="inline-block text-center w-full py-3 rounded-lg border border-white/20 text-sm font-bold uppercase tracking-wider hover:bg-white hover:text_black transition-colors">{product.cta}</a>
+              <a href={product.link} className="inline-block text-center w-full py-3 rounded-lg border border-white/20 text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-colors">{product.cta}</a>
             </div>
           ))}
         </div>

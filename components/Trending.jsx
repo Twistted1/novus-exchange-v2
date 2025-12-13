@@ -5,7 +5,7 @@ function TrendCard({ item, onClick }) {
   const [imgSrc, setImgSrc] = useState(item.image)
   const fallbackImage = 'https://placehold.co/1920x1080/111111/ffffff?text=Trending'
   return (
-    <div onClick={onClick} className="bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-white/10 transition-all duration-500 group cursor-pointer neon-card shine-hover aspect-square flex flex-col">
+    <div onClick={onClick} className="bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden shadow-2xl border border-white/10 transition-all duration-500 group cursor-pointer neon-card shine-hover aspect-video flex flex-col">
       <div className="relative h-1/2 overflow-hidden w-full">
         <Image src={imgSrc || fallbackImage} alt={item.title} fill sizes="(min-width:768px) 33vw, 100vw" className="object-cover group-hover:scale-110 transition-transform duration-700" unoptimized onError={() => setImgSrc(fallbackImage)} />
         <div className="absolute top-3 right-3 bg-red-600/90 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-lg border border-red-500/50">Live</div>
@@ -41,7 +41,7 @@ export default function Trending() {
   }, [])
   const [selectedTrend, setSelectedTrend] = useState(null)
   return (
-    <section id="trending" className="min-h-screen relative bg-black/40 reveal scroll-mt-0 flex items-center justify-center snap-start py-20">
+    <section id="trending" className="min-h-screen relative bg-black/40 reveal scroll-mt-0 flex items-center justify-center snap-start py-32 z-10">
       <div className="max-w-6xl mx-auto px-6 w-full">
         <h2 className="text-5xl md:text-6xl font-black mb-6 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Global Trending</h2>
         <p className="text-xl text-white/70 mb-16 text-center max-w-2xl mx-auto font-light">Daily bites of the top stories shaping the global narrative.</p>
