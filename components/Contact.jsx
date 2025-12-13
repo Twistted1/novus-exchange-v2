@@ -59,8 +59,12 @@ export default function Contact() {
                 <a href="https://instagram.com/novusexchange" target="_blank" rel="noopener noreferrer" className="text-[#E4405F] hover:text-[#E4405F]/80 hover:scale-110 transition-all duration-300" aria-label="Instagram">
                   <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.225-.149-4.771-1.664-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85C2.163 3.854 3.708 2.309 6.93 2.163 8.181 2.105 8.559 2.094 12 2.094m0-2.094c-3.264 0-3.66.014-4.944.072C2.69 0.402 0.402 2.69 0.072 7.056 0.014 8.34 0 8.736 0 12s.014 3.66.072 4.944C0.402 21.31 2.69 23.598 7.056 23.928c1.284.058 1.68.072 4.944.072s3.66-.014 4.944-.072c4.368-.328 6.656-2.616 6.984-6.984.058-1.284.072-1.68.072-4.944s-.014-3.66-.072-4.944C23.598 2.69 21.31 0.402 16.944 0.072 15.66 0.014 15.264 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" /></svg>
                 </a>
-                <a href="https://rumble.com/c/NovusExchange" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-all duration-300" aria-label="Rumble">
-                  <svg className="w-7 h-7" viewBox="0 0 512 512" fill="none"><rect width="512" height="512" rx="15%" fill="#85C742" /><path d="M256 96c-53 0-96 43-96 96v32c0 53 43 96 96 96s96-43 96-96v-32c0-53-43-96-96-96zm64 128c0 35-29 64-64 64s-64-29-64-64v-32c0-35 29-64 64-64s64 29 64 64v32z" fill="#fff" /><path d="M368 288l-48-48v144h-64V240l-48 48V144h160v144z" fill="#fff" /></svg>
+                <a href="https://rumble.com/c/NovusExchange" target="_blank" rel="noopener noreferrer" className="text-[#85C742] hover:text-[#85C742]/80 hover:scale-110 transition-all duration-300" aria-label="Rumble">
+                  <svg className="w-7 h-7" viewBox="0 0 100 100" fill="currentColor">
+                    <circle cx="50" cy="50" r="48" fill="#85C742" />
+                    <path d="M50 25c-8 0-15 4-19 10l-5-3c5-8 14-12 24-12 15 0 27 12 27 27s-12 27-27 27c-10 0-19-6-24-14l5-3c4 6 11 10 19 10 12 0 22-10 22-22S62 25 50 25z" fill="#fff" />
+                    <path d="M35 45h30v10H35z" fill="#fff" />
+                  </svg>
                 </a>
               </div>
             </div>

@@ -16,7 +16,7 @@ function ArticleCard({ article, onClick }) {
         <h3 className="text-xl font-bold mb-3 leading-snug text-white transition-colors drop-shadow-sm neon-text">{article.title}</h3>
         <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 mb-4 font-light">{article.summary}</p>
         <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-500">
-          <span className="font-medium">By {article.author || 'Marcio Noves'}</span>
+          <span className="font-medium">By {article.author || 'Marcio R.'}</span>
           <span>{article.readTime || '5 min read'}</span>
         </div>
       </div>

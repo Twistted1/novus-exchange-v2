@@ -82,7 +82,7 @@ export default function SiteChatbot() {
         )}
       </button>
       {isOpen && (
-        <div className="fixed bottom-40 right-6 w-96 max-w-[calc(100vw-3rem)] bg-[#050505] border border-white/20 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden" style={{ height: '600px' }}>
+        <div className="fixed bottom-40 right-6 w-80 max-w-[calc(100vw-3rem)] bg-[#050505] border border-white/20 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden" style={{ height: '600px' }}>
           <div className="bg-cyan-600 p-4 flex items-center justify-between">
             <h3 className="font-bold text-white text-base">Novus Assistant</h3>
             <button onClick={() => { setIsOpen(false); stopSpeak(); }} className="text-white/80 hover:text-white transition-colors" aria-label="Close">
