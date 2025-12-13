@@ -10,9 +10,9 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
           {/* Contact Form */}
-          <div className="liquid-glass border border-white/20 rounded-3xl p-8 md:p-10">
-            <h3 className="text-3xl font-black mb-3 text-white">Get in touch</h3>
-            <p className="text-gray-400 text-sm mb-8 font-light">We value your feedback and inquiries. Reach out with tips, corrections, or questions.</p>
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold mb-3 text-white">Get in touch</h3>
+            <p className="text-gray-400 text-sm mb-6 font-light">We value your feedback and inquiries.</p>
             <form action="https://formspree.io/f/mdkwzpjv" method="POST" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -34,12 +34,12 @@ export default function Contact() {
 
           {/* Newsletter + Social */}
           <div className="flex flex-col gap-8">
-            <div className="liquid-glass border border-white/20 rounded-3xl p-8 md:p-10">
-              <h3 className="text-3xl font-black mb-3 text-white">Subscribe to Our Newsletter</h3>
-              <p className="text-gray-400 text-sm mb-8 font-light">Stay ahead of the curve with our latest articles, exclusive insights, and in-depth analysis delivered directly to your inbox.</p>
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold mb-3 text-white">Subscribe to Our Newsletter</h3>
+              <p className="text-gray-400 text-sm mb-6 font-light">Stay ahead of the curve with our latest articles.</p>
               <form action="https://formspree.io/f/xnngvoyw" method="POST" className="flex flex-col gap-4">
-                <input type="email" name="email" placeholder="your.email@example.com" required className="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 placeholder-white/20" />
-                <button type="submit" className="bg-cyan-600 text-white font-bold text-xs uppercase tracking-widest py-4 px-6 rounded-xl hover:bg-cyan-500 transition-all shadow-lg w-full">Subscribe</button>
+                <input type="email" name="email" placeholder="your.email@example.com" required className="w-full bg-black/40 border border-white/10 rounded-xl p-4 text-white text-sm focus:outline-none focus:ring-2 focus:ring-white/20 placeholder-white/30" />
+                <button type="submit" className="bg-red-600 text-white font-bold text-xs uppercase tracking-widest py-4 px-6 rounded-xl hover:bg-red-700 transition-all w-full">Subscribe</button>
               </form>
             </div>
 
