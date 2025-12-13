@@ -5,7 +5,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">About</h2>
-          <p className="text-xs text-gray-400 font-light max-w-2xl mx-auto">Learn more about our mission, our values, and the team driving Novus Exchange forward.</p>
+          <p className="text-sm text-gray-400 font-light max-w-2xl mx-auto">Learn more about our mission, our values, and the team driving Novus Exchange forward.</p>
         </div>
         <div className="bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden group">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
