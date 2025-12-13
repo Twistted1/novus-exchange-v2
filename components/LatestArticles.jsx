@@ -15,9 +15,9 @@ function ArticleCard({ article, onClick }) {
         <div className="text-cyan-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-2 drop-shadow-md">{article.category}</div>
         <h3 className="text-xl font-bold mb-3 leading-snug text-white transition-colors drop-shadow-sm neon-text">{article.title}</h3>
         <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 mb-4 font-light">{article.summary}</p>
-        <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-500 group-hover:text-white transition-colors">
-          <span className="uppercase tracking-wide font-medium">Read Analysis</span>
-          <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-500">
+          <span className="font-medium">By {article.author || 'Marcio Noves'}</span>
+          <span>{article.readTime || '5 min read'}</span>
         </div>
       </div>
     </div>
@@ -158,8 +158,8 @@ export default function LatestArticles({ searchQuery }) {
   return (
     <section id="articles" className="min-h-screen relative reveal scroll-mt-0 flex items-center justify-center snap-start py-32 z-10">
       <div className="max-w-7xl mx-auto px-6 w-full">
-        <h2 className="text-5xl md:text-6xl font-black mb-6 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Latest Articles</h2>
-        <p className="text-xl text-white/70 mb-16 text-center max-w-2xl mx-auto font-light">In-depth analysis and commentary on critical issues.</p>
+        <h2 className="text-5xl md:text-6xl font-black mb-6 text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">Articles</h2>
+        <p className="text-xl text-white/70 mb-16 text-center max-w-2xl mx-auto font-light">In-depth analysis and commentary on today's most critical issues.</p>
         {isLoading && <div className="text-center text-cyan-400 animate-pulse text-xl font-mono">LOADING INTELLIGENCE...</div>}
         {!isLoading && (
           filtered.length === 0 ? (
