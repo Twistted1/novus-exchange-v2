@@ -108,8 +108,8 @@ export default function AskNovus() {
             {messages.map((msg, index) => (
               <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] p-4 rounded-xl text-sm leading-relaxed backdrop-blur-sm shadow-lg ${msg.sender === 'user'
-                    ? 'bg-white/10 text-white border border-white/20'
-                    : 'bg-white/5 text-gray-100 border border-white/10'
+                  ? 'bg-white/10 text-white border border-white/20'
+                  : 'bg-white/5 text-gray-100 border border-white/10'
                   }`}>
                   {msg.type === 'error' ? <span className="text-red-400 font-bold">{msg.text}</span> : <p className="drop-shadow-sm">{msg.text}</p>}
                   {msg.type === 'image_upload' && (
@@ -153,12 +153,16 @@ export default function AskNovus() {
               />
               <button
                 type="submit"
-                className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 disabled:opacity-50 font-bold transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] transform hover:scale-105 active:scale-95"
+                className="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 disabled:opacity-50 transition-all flex items-center justify-center"
                 disabled={isLoading || !input.trim()}
+                aria-label="Send"
               >
-                Send
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </button>
             </div>
+            <p className="text-center text-gray-500 text-xs mt-3">AI can make mistakes. Please verify important information.</p>
             <p className="text-center text-gray-500 text-[10px] mt-2">Your privacy is important. We do not keep records of your conversations. Admin fee required.</p>
           </form>
         </div>
