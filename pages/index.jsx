@@ -27,6 +27,7 @@ export default function Home() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       document.documentElement.classList.add('dark')
+      window.scrollTo(0, 0) // Always start at top
     }
   }, [])
 
