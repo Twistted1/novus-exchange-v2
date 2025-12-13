@@ -145,7 +145,7 @@ export default function AskNovus() {
                 </div>
               </div>
             ))}
-            <div ref={chatEndRef} />
+            <div ref={messagesEndRef} />
           </div>
 
           <form onSubmit={handleSubmit} className="p-4 bg-white/5 border-t border-white/10 backdrop-blur-md relative z-10">
