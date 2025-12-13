@@ -47,7 +47,7 @@ export default function SiteChatbot() {
 
   return (
     <>
-      <button onClick={() => setIsOpen(!isOpen)} className="fixed bottom-6 right-6 p-4 bg-red-600 text-white rounded-full shadow-2xl hover:bg-red-700 transition-all z-50" aria-label="Open Site Chat">
+      <button onClick={() => setIsOpen(!isOpen)} className="fixed bottom-24 right-6 p-4 bg-red-600 text-white rounded-full shadow-2xl hover:bg-red-700 transition-all z-50" aria-label="Open Site Chat">
         {isOpen ? (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         ) : (
@@ -55,7 +55,7 @@ export default function SiteChatbot() {
         )}
       </button>
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-[75vh] liquid-glass z-50 flex flex-col overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+        <div className="fixed bottom-40 right-6 w-96 max-w-[calc(100vw-3rem)] liquid-glass z-50 flex flex-col overflow-hidden shadow-2xl max-h-[600px]">
           <div className="bg-cyan-500/20 backdrop-blur-md p-4 flex items-center justify-between border-b border-white/10"><h3 className="font-bold text-white drop-shadow-md">Novus Assistant</h3></div>
           <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-transparent">
             {messages.map((msg) => (
